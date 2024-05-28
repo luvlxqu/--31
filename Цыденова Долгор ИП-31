@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+struct Student {
+    string name;
+    string last_name;
+    int  Total_classes;
+    int passes;
+};
+
+
+double average(Student student) {
+    int atterdance = student.Total_classes - student.passes;
+    double counter = atterdance * 5 + student.passes;
+    return counter / student.Total_classes;
+};
+
+int main()
+{
+    Student student;
+    cout << "Enter a name: \n";
+    cin >> student.name;
+    cout << "Enter your last name: \n";
+    cin >> student.last_name;
+    cout << "Enter the number of Total_classes : \n";
+    cin >> student.Total_classes;
+    cout << "Enter the number of passes: \n";
+    cin >> student.passes;
+    double averageCounter = average(student);
+
+    cout << "Student's average score " << student.name << " " << student.last_name << "is: " << averageCounter << endl;
+}
